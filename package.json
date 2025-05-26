@@ -1,0 +1,17 @@
+{
+  "name": "venditor",
+  "version": "1.0.0",
+  "main": "vite.config.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}
