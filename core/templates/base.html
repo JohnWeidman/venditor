@@ -1,0 +1,45 @@
+{% load django_vite %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="add some stuff here">
+    <meta name="keywords" content="and here too">
+    <title>{% block title %}My Site{% endblock title %}</title>
+    
+    {% vite_hmr_client %}
+    {% vite_asset './static/js/main.js' %}
+</head>
+<body class="min-h-screen bg-gray-50">
+    <header>
+        <nav class="px-4 py-2">
+            {% block nav %}
+            <!-- Navigation content goes here -->
+            {% endblock nav %}
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4">
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="{{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% block content %}
+        <!-- Main content goes here -->
+        {% endblock content %}
+    </main>
+
+    <footer class="mt-auto py-4">
+        {% block footer %}
+        <!-- Footer content goes here -->
+        {% endblock footer %}
+    </footer>
+</body>
+</html>
