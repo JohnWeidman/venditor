@@ -4,6 +4,11 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   base: "/static/",
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "./static"),
+    },
+  },
   build: {
     manifest: "manifest.json",
     outDir: resolve("./assets"),
